@@ -1,33 +1,33 @@
 use gl
 include GL
 
-typedef unsigned int	GLenum;
-typedef unsigned char	GLboolean;
-typedef unsigned int	GLbitfield;
-typedef void		GLvoid;
-typedef signed char	GLbyte;		/* 1-byte signed */
-typedef short		GLshort;	/* 2-byte signed */
-typedef int		GLint;		/* 4-byte signed */
-typedef unsigned char	GLubyte;	/* 1-byte unsigned */
-typedef unsigned short	GLushort;	/* 2-byte unsigned */
-typedef unsigned int	GLuint;		/* 4-byte unsigned */
-typedef int		GLsizei;	/* 4-byte signed */
-typedef float		GLfloat;	/* single precision float */
-typedef float		GLclampf;	/* single precision float in [0,1] */
-typedef double		GLdouble;	/* double precision float */
-typedef double		GLclampd;	/* double precision float in [0,1] */
+GLenum: cover from UInt
+GLboolean: cover from UChar
+GLbitfield: cover from UInt
+GLvoid: cover from Void
+GLbyte: cover from SChar
+GLshort: cover from Short
+GLint: cover from Int
+GLubyte: cover from UChar
+GLushort: cover from UShort
+GLuint: cover from UInt
+GLsizei: cover from Int
+GLfloat: cover from Float
+GLclampf: cover from Float
+GLdouble: cover from Double
+GLclampd: cover from Double
 
 StructUnnamed1: cover {
     quot: extern Long
     rem: extern Long
 }
 
-GLboolean: enum {
+GLBool: enum from GLboolean {
 		False: extern(GL_FALSE)
 		True: extern(GL_TRUE)
 }
 
-GLenum: enum {
+GLEnum: enum from GLenum {
 		unsignedByte: extern(GL_UNSIGNED_BYTE)
 		short: extern(GL_SHORT)
 		unsignedShort: extern(GL_UNSIGNED_SHORT)
