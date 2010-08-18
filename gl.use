@@ -1,0 +1,5 @@
+Name: OpenGL 7.0
+Description: Open Graphics Library
+Pkgs: gl
+Includes: GL/gl.h
+SourcePath: .
