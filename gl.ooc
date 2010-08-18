@@ -4358,6 +4358,26 @@ glTranslatef: extern func (x: GLfloat, y: GLfloat, z: GLfloat)
 glMultiTexCoord3ivARB: extern func (target: GLenum, v: const GLint*)
 glVertex4iv: extern func (v: const GLint*)
 glGetTexGeniv: extern func (coord: GLenum, pname: GLenum, params: GLint*)
+// GLbyte
+glNormal: func ~3b (nx, ny, nz: GLbyte) {
+		glNormal3b(nx, ny, nz)
+}
+glColor: func ~3b (red, green, blue: GLbyte) {
+		glColor3b(red, green, blue)
+}
+
+glColor: func ~4b (red, green, blue, alpha: GLbyte) {
+		glColor4b(red, green, blue, alpha)
+}
+
+//GLubyte
+glColor: func ~3ub (red, green, blue: GLubyte) {
+		glColor3ub(red, green, blue)
+}
+
+glColor: func ~4ub (red, green, blue, alpha: GLubyte) {
+		glColor4ub(red, green, blue, alpha)
+}
 
 // GLshort
 glVertex: func ~2s (x, y: GLshort) {
@@ -4372,8 +4392,28 @@ glVertex: func ~4s (x, y, z, w: GLshort) {
 		glVertex4s(x, y, z, w)
 }
 
-// GLint
+glNormal: func ~3s (nx, ny, nz: GLshort) {
+		glNormal3s(nx, ny, nz)
+}
 
+glColor: func ~3s (red, green, blue: GLshort) {
+		glColor3s(red, green, blue)
+}
+
+glColor: func ~4s (red, green, blue, alpha: GLshort) {
+		glColor4s(red, green, blue, alpha)
+}
+
+// GLushort
+glColor: func ~3us (red, green, blue: GLushort) {
+		glColor3us(red, green, blue)
+}
+
+glColor: func ~4us (red, green, blue: GLushort) {
+		glColor4us(red, green, blue)
+}
+
+// GLint
 glVertex: func ~2i (x, y: GLint) {
 		glVertex2i(x, y)
 }
@@ -4384,6 +4424,27 @@ glVertex: func ~3i (x, y, z: GLint) {
 
 glVertex: func ~4i (x, y, z, w: GLint) {
 		glVertex3i(x, y, z, w)
+}
+
+glNormal: func ~3i (nx, ny, nz: GLint) {
+		glNormal3i(nx, ny, nz)
+}
+
+glColor: func ~3i (red, green, blue: GLint) {
+		glColor3i(red, green, blue)
+}
+
+glColor: func ~4i (red, green, blue, alpha: GLint) {
+		glColor4i(red, green, blue, alpha)
+}
+
+// GLuint
+glColor: func ~3ui (red, green, blue: GLuint) {
+		glColor3ui(red, green, blue)
+}
+
+glColor: func ~4ui (red, green, blue, alpha: GLuint) {
+		glColor4ui(red, green, blue, alpha)
 }
 
 // GLfloat
@@ -4400,16 +4461,40 @@ glVertex: func ~4f (x, y, z, w: GLfloat) {
 		glVertex3f(x, y, z, w)
 }
 
+glNormal: func ~3f (nx, ny, nz: GLfloat) {
+		glNormal3f(nx, ny, nz)
+}
+
+glColor: func ~3f (red, green, blue: GLfloat) {
+		glColor3f(red, green, blue)
+}
+
+glColor: func ~4f (red, green, blue, alpha: GLfloat) {
+		glColor4f(red, green, blue, alpha)
+}
+
 // GLdouble
 
-glVertex: func ~3d (x, y: GLdouble) {
+glVertex: func ~2d (x, y: GLdouble) {
 		glVertex2d(x, y)
 }
 
 glVertex: func ~3d (x, y, z: GLdouble) {
-		glVertex3d(x, y, z)
+		glVertex2d(x, y, z)
 }
 
-glVertex: func ~4d(x, y, z, w: GLdouble) {
-		glVertex4d(x, y, z, w)
+glVertex: func ~4d (x, y, z, w: GLdouble) {
+		glVertex3d(x, y, z, w)
+}
+
+glNormal: func ~3d (nx, ny, nz: GLdouble) {
+		glNormal3d(nx, ny, nz)
+}
+
+glColor: func ~3d (red, green, blue: GLdouble) {
+		glColor3d(red, green, blue)
+}
+
+glColor: func ~4d (red, green, blue, alpha: GLdouble) {
+		glColor4d(red, green, blue, alpha)
 }
