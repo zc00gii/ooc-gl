@@ -4359,3 +4359,57 @@ glMultiTexCoord3ivARB: extern func (target: GLenum, v: const GLint*)
 glVertex4iv: extern func (v: const GLint*)
 glGetTexGeniv: extern func (coord: GLenum, pname: GLenum, params: GLint*)
 
+// GLshort
+glVertex: func ~2s (x, y: GLshort) {
+		glVertex2s(x, y)
+}
+
+glVertex: func ~3s (x, y, z: GLshort) {
+		glVertex3s(x, y, z)
+}
+
+glVertex: func ~4s (x, y, z, w: GLshort) {
+		glVertex4s(x, y, z, w)
+}
+
+// GLint
+
+glVertex: func ~2i (x, y: GLint) {
+		glVertex2i(x, y)
+}
+
+glVertex: func ~3i (x, y, z: GLint) {
+		glVertex3i(x, y, z)
+}
+
+glVertex: func ~4i (x, y, z, w: GLint) {
+		glVertex3i(x, y, z, w)
+}
+
+// GLfloat
+
+glVertex: func ~2f (x, y: GLfloat) {
+		glVertex2f(x, y)
+}
+
+glVertex: func ~3f (x, y, z: GLfloat) {
+		glVertex3f(x, y, z)
+}
+
+glVertex: func ~4f (x, y, z, w: GLfloat) {
+		glVertex3f(x, y, z, w)
+}
+
+// GLdouble
+
+glVertex: func ~3d (x, y: GLdouble) {
+		glVertex2d(x, y)
+}
+
+glVertex: func ~3d (x, y, z: GLdouble) {
+		glVertex3d(x, y, z)
+}
+
+glVertex: func ~4d(x, y, z, w: GLdouble) {
+		glVertex4d(x, y, z, w)
+}
