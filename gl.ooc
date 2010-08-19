@@ -1,5 +1,5 @@
 use gl
-include GL
+include GL/gl
 
 GLenum: cover from UInt
 GLboolean: cover from UChar
@@ -16,18 +16,20 @@ GLfloat: cover from Float
 GLclampf: cover from Float
 GLdouble: cover from Double
 GLclampd: cover from Double
+GLuint64: cover from UInt64
+GLint64: cover from Int64
 
 StructUnnamed1: cover {
     quot: extern Long
     rem: extern Long
 }
 
-GLBool: enum from GLboolean {
-		False: extern(GL_FALSE)
-		True: extern(GL_TRUE)
+glBool: enum from GLboolean {
+		false: extern(GL_FALSE)
+		true: extern(GL_TRUE)
 }
 
-GLEnum: enum from GLenum {
+glEnum: enum from GLenum {
 		unsignedByte: extern(GL_UNSIGNED_BYTE)
 		short: extern(GL_SHORT)
 		unsignedShort: extern(GL_UNSIGNED_SHORT)
@@ -185,7 +187,7 @@ GLEnum: enum from GLenum {
 		add: extern(GL_ADD)
 		load: extern(GL_LOAD)
 		mult: extern(GL_MULT)
-		Return: extern(GL_RETURN)
+		_return: extern(GL_RETURN)
 		alphaTest: extern(GL_ALPHA_TEST)
 		alphaTestRef: extern(GL_ALPHA_TEST_REF)
 		alphaTestFunc: extern(GL_ALPHA_TEST_FUNC)
@@ -206,11 +208,11 @@ GLEnum: enum from GLenum {
 		feedback: extern(GL_FEEDBACK)
 		render: extern(GL_RENDER)
 		select: extern(GL_SELECT)
-		2D: extern(GL_2D)
-		3D: extern(GL_3D)
-		3Dcolor: extern(GL_3D_COLOR)
-		3DcolorTexture: extern(GL_3D_COLOR_TEXTURE)
-		4DolorTexture: extern(GL_4D_COLOR_TEXTURE)
+		_2D: extern(GL_2D)
+		_3D: extern(GL_3D)
+		_3Dcolor: extern(GL_3D_COLOR)
+		_3DcolorTexture: extern(GL_3D_COLOR_TEXTURE)
+		_4DolorTexture: extern(GL_4D_COLOR_TEXTURE)
 		pointToken: extern(GL_POINT_TOKEN)
 		lineToken: extern(GL_LINE_TOKEN)
 		lineResetToken: extern(GL_LINE_RESET_TOKEN)
@@ -468,7 +470,7 @@ GLEnum: enum from GLenum {
 		textureGenQ: extern(GL_TEXTURE_GEN_Q)
 		vendeor: extern(GL_VENDOR)
 		renderer: extern(GL_RENDERER)
-		Version: extern(GL_VERSION)
+		_version: extern(GL_VERSION)
 		extensions: extern(GL_EXTENSIONS)
 		noError: extern(GL_NO_ERROR)
 		invalidEnum: extern(GL_INVALID_ENUM)
@@ -519,7 +521,7 @@ GLEnum: enum from GLenum {
 		RGBA16: extern(GL_RGBA16)
 }
 
-GLbitfield: enum {
+glBitfield: enum {
 		accumRedBits: extern(GL_ACCUM_RED_BITS)
 		accumGreenBits: extern(GL_ACCUM_GREEN_BITS)
 		accumBlueBits: extern(GL_ACCUM_BLUE_BITS)
@@ -679,13 +681,9 @@ PFNGLVERTEXATTRIB3SVARBPROC: cover from Func
 
 PFNGLMULTITEXCOORD3SVARBPROC: cover from Func
 
-GLbitfield: cover from UInt
-
 PFNGLVERTEXATTRIBI1UIVEXTPROC: cover from Func
 
 PFNGLCHECKNAMEDFRAMEBUFFERSTATUSEXTPROC: cover from Func
-
-GLuint64: cover from UInt64
 
 PFNGLGETBUFFERPOINTERVPROC: cover from Func
 
@@ -704,8 +702,6 @@ PFNGLGETINTEGERUI64VNVPROC: cover from Func
 PFNGLUNMAPBUFFERARBPROC: cover from Func
 
 PFNGLSECONDARYCOLOR3IPROC: cover from Func
-
-GLushort: cover from UShort
 
 PFNGLGETVERTEXATTRIBARRAYOBJECTFVATIPROC: cover from Func
 
@@ -1407,10 +1403,6 @@ PFNGLVERTEXATTRIBI3IPROC: cover from Func
 
 PFNGLPROGRAMUNIFORM4FVEXTPROC: cover from Func
 
-GLfloat: cover from Float
-
-GLuint: cover from UInt
-
 PFNGLUNIFORMMATRIX4FVPROC: cover from Func
 
 PFNGLWINDOWPOS3FVMESAPROC: cover from Func
@@ -1905,8 +1897,6 @@ PFNGLMULTITEXGENFEXTPROC: cover from Func
 
 PFNGLWEIGHTBVARBPROC: cover from Func
 
-GLubyte: cover from UChar
-
 PFNGLUNIFORM2IVARBPROC: cover from Func
 
 PFNGLPROGRAMVERTEXLIMITNVPROC: cover from Func
@@ -2223,8 +2213,6 @@ PFNGLVERTEXATTRIBI1IVEXTPROC: cover from Func
 
 PFNGLELEMENTPOINTERAPPLEPROC: cover from Func
 
-GLbyte: cover from Char
-
 PFNGLFRAMEBUFFERTEXTURE1DEXTPROC: cover from Func
 
 PFNGLSECONDARYCOLOR3SPROC: cover from Func
@@ -2375,6 +2363,8 @@ IntLeast16T: cover from Short
 
 PFNGLVERTEXATTRIBS3HVNVPROC: cover from Func
 
+Struct__Glsync: cover
+
 GLsync: cover from Struct__Glsync*
 
 PFNGLMULTITEXCOORD2FARBPROC: cover from Func
@@ -2418,8 +2408,6 @@ PFNGLMULTITEXCOORD3IVPROC: cover from Func
 PFNGLVERTEXBLENDENVIATIPROC: cover from Func
 
 PFNGLWINDOWPOS2SVMESAPROC: cover from Func
-
-GLenum: cover from UInt
 
 PFNGLGETOBJECTPARAMETERFVARBPROC: cover from Func
 
@@ -2713,8 +2701,6 @@ PFNGLVERTEXATTRIB4FVARBPROC: cover from Func
 
 UintLeast16T: cover from UShort
 
-GLsizei: cover from Int
-
 PFNGLDRAWELEMENTSINSTANCEDARBPROC: cover from Func
 
 PFNGLPROGRAMUNIFORM4IEXTPROC: cover from Func
@@ -2774,8 +2760,6 @@ PFNGLMULTITEXPARAMETERFEXTPROC: cover from Func
 GLintptrARB: cover from PtrdiffT
 
 PFNGLVERTEXATTRIB4BVARBPROC: cover from Func
-
-GLint: cover from Int
 
 PFNGLVERTEXSTREAM1DVATIPROC: cover from Func
 
@@ -3085,8 +3069,6 @@ PFNGLGETTEXTURELEVELPARAMETERFVEXTPROC: cover from Func
 
 PFNGLBINDPARAMETEREXTPROC: cover from Func
 
-GLdouble: cover from Double
-
 PFNGLFREEOBJECTBUFFERATIPROC: cover from Func
 
 PFNGLVERTEXATTRIBI3UIPROC: cover from Func
@@ -3114,10 +3096,6 @@ PFNGLUNIFORM3FVARBPROC: cover from Func
 PFNGLVARIANTIVEXTPROC: cover from Func
 
 PFNGLBINDFRAGMENTSHADERATIPROC: cover from Func
-
-GLclampd: cover from Double
-
-GLclampf: cover from Float
 
 PFNGLGETMULTITEXENVIVEXTPROC: cover from Func
 
@@ -3366,8 +3344,6 @@ PFNGLPOINTPARAMETERFVSGISPROC: cover from Func
 PFNGLMULTITEXCOORD3HNVPROC: cover from Func
 
 PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC: cover from Func
-
-GLvoid: cover from Void
 
 PFNGLVERTEXSTREAM2SVATIPROC: cover from Func
 
@@ -3681,8 +3657,6 @@ PFNGLPROGRAMENVPARAMETERI4IVNVPROC: cover from Func
 
 PFNGLCOMBINERINPUTNVPROC: cover from Func
 
-GLint64: cover from Int64
-
 PFNGLPROGRAMENVPARAMETER4DVARBPROC: cover from Func
 
 PFNGLSECONDARYCOLORPOINTEREXTPROC: cover from Func
@@ -3700,8 +3674,6 @@ PFNGLDISABLEINDEXEDEXTPROC: cover from Func
 PFNGLPROGRAMBUFFERPARAMETERSIIVNVPROC: cover from Func
 
 PFNGLAREPROGRAMSRESIDENTNVPROC: cover from Func
-
-GLshort: cover from Short
 
 PFNGLMULTITEXCOORD1FVPROC: cover from Func
 
@@ -3825,8 +3797,6 @@ PFNGLFOGCOORDFVEXTPROC: cover from Func
 
 PFNGLGENFENCESNVPROC: cover from Func
 
-GLboolean: cover from UChar
-
 PFNGLVERTEXATTRIBI2IVPROC: cover from Func
 
 PFNGLMULTITEXCOORD3IPROC: cover from Func
@@ -3884,8 +3854,6 @@ PFNGLCLIENTWAITSYNCPROC: cover from Func
 PFNGLCOLOR3HNVPROC: cover from Func
 
 PFNGLCONVOLUTIONFILTER1DPROC: cover from Func
-
-Struct__Glsync: cover
 
 glMap1d: extern func (target: GLenum, u1: GLdouble, u2: GLdouble, stride: GLint, order: GLint, points: const GLdouble*)
 glMap1f: extern func (target: GLenum, u1: GLfloat, u2: GLfloat, stride: GLint, order: GLint, points: const GLfloat*)
@@ -4359,142 +4327,157 @@ glMultiTexCoord3ivARB: extern func (target: GLenum, v: const GLint*)
 glVertex4iv: extern func (v: const GLint*)
 glGetTexGeniv: extern func (coord: GLenum, pname: GLenum, params: GLint*)
 // GLbyte
-glNormal: func ~3b (nx, ny, nz: GLbyte) {
+glNormal: func ~v3b (nx, ny, nz: GLbyte) {
 		glNormal3b(nx, ny, nz)
 }
-glColor: func ~3b (red, green, blue: GLbyte) {
+glColor: func ~v3b (red, green, blue: GLbyte) {
 		glColor3b(red, green, blue)
 }
 
-glColor: func ~4b (red, green, blue, alpha: GLbyte) {
+glColor: func ~v4b (red, green, blue, alpha: GLbyte) {
 		glColor4b(red, green, blue, alpha)
 }
 
 //GLubyte
-glColor: func ~3ub (red, green, blue: GLubyte) {
+glColor: func ~v3ub (red, green, blue: GLubyte) {
 		glColor3ub(red, green, blue)
 }
 
-glColor: func ~4ub (red, green, blue, alpha: GLubyte) {
+glColor: func ~v4ub (red, green, blue, alpha: GLubyte) {
 		glColor4ub(red, green, blue, alpha)
 }
 
 // GLshort
-glVertex: func ~2s (x, y: GLshort) {
+glVertex: func ~v2s (x, y: GLshort) {
 		glVertex2s(x, y)
 }
 
-glVertex: func ~3s (x, y, z: GLshort) {
+glVertex: func ~v3s (x, y, z: GLshort) {
 		glVertex3s(x, y, z)
 }
 
-glVertex: func ~4s (x, y, z, w: GLshort) {
+glVertex: func ~v4s (x, y, z, w: GLshort) {
 		glVertex4s(x, y, z, w)
 }
 
-glNormal: func ~3s (nx, ny, nz: GLshort) {
+glNormal: func ~v3s (nx, ny, nz: GLshort) {
 		glNormal3s(nx, ny, nz)
 }
 
-glColor: func ~3s (red, green, blue: GLshort) {
+glColor: func ~v3s (red, green, blue: GLshort) {
 		glColor3s(red, green, blue)
 }
 
-glColor: func ~4s (red, green, blue, alpha: GLshort) {
+glColor: func ~v4s (red, green, blue, alpha: GLshort) {
 		glColor4s(red, green, blue, alpha)
 }
 
 // GLushort
-glColor: func ~3us (red, green, blue: GLushort) {
+glColor: func ~v3us (red, green, blue: GLushort) {
 		glColor3us(red, green, blue)
 }
 
-glColor: func ~4us (red, green, blue: GLushort) {
-		glColor4us(red, green, blue)
+glColor: func ~v4us (red, green, blue, alpha: GLushort) {
+		glColor4us(red, green, blue, alpha)
 }
 
 // GLint
-glVertex: func ~2i (x, y: GLint) {
+glVertex: func ~v2i (x, y: GLint) {
 		glVertex2i(x, y)
 }
 
-glVertex: func ~3i (x, y, z: GLint) {
+glVertex: func ~v3i (x, y, z: GLint) {
 		glVertex3i(x, y, z)
 }
 
-glVertex: func ~4i (x, y, z, w: GLint) {
-		glVertex3i(x, y, z, w)
+glVertex: func ~v4i (x, y, z, w: GLint) {
+		glVertex4i(x, y, z, w)
 }
 
-glNormal: func ~3i (nx, ny, nz: GLint) {
+glNormal: func ~v3i (nx, ny, nz: GLint) {
 		glNormal3i(nx, ny, nz)
 }
 
-glColor: func ~3i (red, green, blue: GLint) {
+glColor: func ~v3i (red, green, blue: GLint) {
 		glColor3i(red, green, blue)
 }
 
-glColor: func ~4i (red, green, blue, alpha: GLint) {
+glColor: func ~v4i (red, green, blue, alpha: GLint) {
 		glColor4i(red, green, blue, alpha)
 }
 
+glPixelStore: func ~i (pname: GLenum, param: GLint) {
+		glPixelStorei(pname, param)
+}
+
+glTexParameter: func ~i (target, pname: GLenum, param: GLint) {
+		glTexParameteri(pname, param)
+}
+
 // GLuint
-glColor: func ~3ui (red, green, blue: GLuint) {
+glColor: func ~v3ui (red, green, blue: GLuint) {
 		glColor3ui(red, green, blue)
 }
 
-glColor: func ~4ui (red, green, blue, alpha: GLuint) {
+glColor: func ~v4ui (red, green, blue, alpha: GLuint) {
 		glColor4ui(red, green, blue, alpha)
 }
 
 // GLfloat
 
-glVertex: func ~2f (x, y: GLfloat) {
+glVertex: func ~v2f (x, y: GLfloat) {
 		glVertex2f(x, y)
 }
 
-glVertex: func ~3f (x, y, z: GLfloat) {
+glVertex: func ~v3f (x, y, z: GLfloat) {
 		glVertex3f(x, y, z)
 }
 
-glVertex: func ~4f (x, y, z, w: GLfloat) {
-		glVertex3f(x, y, z, w)
+glVertex: func ~v4f (x, y, z: GLfloat) {
+		glVertex3f(x, y, z)
 }
 
-glNormal: func ~3f (nx, ny, nz: GLfloat) {
+glNormal: func ~v3f (nx, ny, nz: GLfloat) {
 		glNormal3f(nx, ny, nz)
 }
 
-glColor: func ~3f (red, green, blue: GLfloat) {
+glColor: func ~v3f (red, green, blue: GLfloat) {
 		glColor3f(red, green, blue)
 }
 
-glColor: func ~4f (red, green, blue, alpha: GLfloat) {
+glColor: func ~v4f (red, green, blue, alpha: GLfloat) {
 		glColor4f(red, green, blue, alpha)
 }
 
-// GLdouble
+glPixelStore: func ~f (pname: GLenum, param: GLfloat) {
+		glPixelStoref(pname, param)
+}
 
-glVertex: func ~2d (x, y: GLdouble) {
+glTexParameter: func ~f (target, pname: GLenum, param: GLfloat) {
+		glTexParameterf(pname, param)
+}
+
+// GLdouble
+glVertex: func ~v2d (x, y: GLdouble) {
 		glVertex2d(x, y)
 }
 
-glVertex: func ~3d (x, y, z: GLdouble) {
-		glVertex2d(x, y, z)
+glVertex: func ~v3d (x, y, z: GLdouble) {
+		glVertex3d(x, y, z)
 }
 
-glVertex: func ~4d (x, y, z, w: GLdouble) {
-		glVertex3d(x, y, z, w)
+glVertex: func ~v4d (x, y, z, w: GLdouble) {
+		glVertex4d(x, y, z, w)
 }
 
-glNormal: func ~3d (nx, ny, nz: GLdouble) {
+glNormal: func ~v3d (nx, ny, nz: GLdouble) {
 		glNormal3d(nx, ny, nz)
 }
 
-glColor: func ~3d (red, green, blue: GLdouble) {
+glColor: func ~v3d (red, green, blue: GLdouble) {
 		glColor3d(red, green, blue)
 }
 
-glColor: func ~4d (red, green, blue, alpha: GLdouble) {
+glColor: func ~v4d (red, green, blue, alpha: GLdouble) {
 		glColor4d(red, green, blue, alpha)
 }
