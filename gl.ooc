@@ -4414,6 +4414,10 @@ glTexParameter: func ~i (target, pname: GLenum, param: GLint) {
 		glTexParameteri(pname, param)
 }
 
+glTexEnv: func ~i (target, pname: GLenum, param: GLint) {
+		glTexEnvi(pname, param)
+}
+
 // GLuint
 glColor: func ~v3ui (red, green, blue: GLuint) {
 		glColor3ui(red, green, blue)
@@ -4455,6 +4459,10 @@ glPixelStore: func ~f (pname: GLenum, param: GLfloat) {
 
 glTexParameter: func ~f (target, pname: GLenum, param: GLfloat) {
 		glTexParameterf(pname, param)
+}
+
+glTexEnv: func ~f (target, pname: GLenum, param: GLfloat) {
+		glTexEnvf(pname, param)
 }
 
 // GLdouble
