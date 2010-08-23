@@ -521,7 +521,7 @@ glEnum: enum from GLenum {
 		RGBA16: extern(GL_RGBA16)
 }
 
-glBitfield: enum {
+glBitfield: enum from GLbitfield {
 		accumRedBits: extern(GL_ACCUM_RED_BITS)
 		accumGreenBits: extern(GL_ACCUM_GREEN_BITS)
 		accumBlueBits: extern(GL_ACCUM_BLUE_BITS)
@@ -4326,6 +4326,8 @@ glTranslatef: extern func (x: GLfloat, y: GLfloat, z: GLfloat)
 glMultiTexCoord3ivARB: extern func (target: GLenum, v: const GLint*)
 glVertex4iv: extern func (v: const GLint*)
 glGetTexGeniv: extern func (coord: GLenum, pname: GLenum, params: GLint*)
+
+/* DOESN'T WORK RIGHT NOW
 // GLbyte
 glNormal: func ~v3b (nx, ny, nz: GLbyte) {
 		glNormal3b(nx, ny, nz)
@@ -4411,11 +4413,11 @@ glPixelStore: func ~i (pname: GLenum, param: GLint) {
 }
 
 glTexParameter: func ~i (target, pname: GLenum, param: GLint) {
-		glTexParameteri(pname, param)
+		glTexParameteri(target, pname, param)
 }
 
 glTexEnv: func ~i (target, pname: GLenum, param: GLint) {
-		glTexEnvi(pname, param)
+		glTexEnvi(target, pname, param)
 }
 
 // GLuint
@@ -4458,11 +4460,15 @@ glPixelStore: func ~f (pname: GLenum, param: GLfloat) {
 }
 
 glTexParameter: func ~f (target, pname: GLenum, param: GLfloat) {
-		glTexParameterf(pname, param)
+		glTexParameterf(target, pname, param)
 }
 
 glTexEnv: func ~f (target, pname: GLenum, param: GLfloat) {
-		glTexEnvf(pname, param)
+		glTexEnvf(target, pname, param)
+}
+
+glTranslate: func ~f (x, y, z: Float) {
+		glTranslatef(x, y, z)
 }
 
 // GLdouble
@@ -4489,3 +4495,7 @@ glColor: func ~v3d (red, green, blue: GLdouble) {
 glColor: func ~v4d (red, green, blue, alpha: GLdouble) {
 		glColor4d(red, green, blue, alpha)
 }
+
+glTranslate: func ~d (x, y, z: Double) {
+		glTranslated(x, y, z)
+} */
